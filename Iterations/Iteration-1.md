@@ -1,6 +1,6 @@
 # Iteration 1 — Project Setup
 
-Use the existing `instructions.md` as the primary project context.
+Use the existing `copilot-instructions.md` as the primary project context.
 
 Goal: Set up the initial project structure and development environment.
 

@@ -46,6 +46,7 @@ The workflow should remain:
 * Avoid over engineering
 * Prefer readable code over clever code
 * Use arrow functions over general function definitions
+* Avoid function inside function
 * Functions should be pure and thoroughly tested
 * Functions should not exceed 15 lines
 * Use async/await
