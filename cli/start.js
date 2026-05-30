@@ -28,8 +28,13 @@ const runStart = async (name) => {
   if (!normalizedName) throw new Error("Activity name is required.");
   const { client, db } = await connectToDatabase();
   const collection = db.collection("activities");
-  const activity = await findActivity(normalizedName, collection);
-  startLiveTimer(activity.name, client);
+  try {
+    const activity = await findActivity(normalizedName, collection);
+    startLiveTimer(activity.name, client);
+  } catch (error) {
+    await closeConnection(client);
+    throw error;
+  }
 };
 
 module.exports = { runStart };
