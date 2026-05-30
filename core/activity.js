@@ -19,6 +19,13 @@ async function registerActivity(name, collection) {
   return activity;
 }
 
+const findActivity = async (name, collection) => {
+  const activity = await collection.findOne({ name });
+  if (!activity) throw new Error(`Activity "${name}" not found.`);
+  return activity;
+};
+
 module.exports = {
   registerActivity,
+  findActivity,
 };
