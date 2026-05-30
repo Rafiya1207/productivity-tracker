@@ -1,5 +1,6 @@
 const { runHealth } = require("./cli/health");
 const { runRegister } = require("./cli/register");
+const { runStart } = require("./cli/start");
 
 async function main() {
   const [, , command = "help", ...args] = process.argv;
@@ -12,10 +13,14 @@ async function main() {
       case "register":
         await runRegister(args.join(" "));
         break;
+      case "start":
+        await runStart(args.join(" "));
+        break;
       default:
         console.log("Available commands:");
         console.log("  node index.js health");
         console.log('  node index.js register "Activity Name"');
+        console.log('  node index.js start "Activity Name"');
         break;
     }
   } catch (error) {
