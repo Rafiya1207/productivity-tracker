@@ -1,18 +1,16 @@
-const { connectToDatabase, closeConnection } = require('../database/connection');
+const { connectToDatabase, closeConnection } = require(
+  "../database/connection",
+);
 
-async function runHealth() {
-  console.log('Starting health check...');
-
+const runHealth = async () => {
+  console.log("Starting health check...");
   const { client, db } = await connectToDatabase();
-
   try {
     await db.command({ ping: 1 });
-    console.log('Health check passed. MongoDB connection successful.');
+    console.log("Health check passed. MongoDB connection successful.");
   } finally {
     await closeConnection(client);
   }
-}
-
-module.exports = {
-  runHealth,
 };
+
+module.exports = { runHealth };
