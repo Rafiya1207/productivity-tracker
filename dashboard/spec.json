@@ -1,14 +1,39 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 210,
   "mark": { "type": "point", "filled": true },
   "encoding": {
-    "x": { "field": "week", "type": "ordinal", "title": "Week" },
+    "x": {
+      "field": "week",
+      "type": "ordinal",
+      "title": "Week",
+      "axis": { "grid": true, "labelAngle": -45 }
+    },
     "y": {
       "field": "day",
       "type": "ordinal",
       "sort": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      "title": "Day"
+      "scale": { "domain": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"] },
+      "title": null,
+      "axis": { "grid": true }
     },
-    "size": { "field": "duration", "type": "quantitative", "title": "Minutes" }
+    "size": {
+      "field": "duration",
+      "type": "quantitative",
+      "title": "Minutes",
+      "scale": { "range": [80, 900] }
+    },
+    "color": {
+      "field": "duration",
+      "type": "quantitative",
+      "scale": { "scheme": "blues" },
+      "title": "Minutes"
+    },
+    "tooltip": [
+      { "field": "day", "type": "ordinal", "title": "Day" },
+      { "field": "week", "type": "ordinal", "title": "Week" },
+      { "field": "duration", "type": "quantitative", "title": "Minutes" }
+    ]
   }
 }
