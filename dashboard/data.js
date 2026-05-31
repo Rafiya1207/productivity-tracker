@@ -1,0 +1,2 @@
+window.chartData = [{"activityName":"Readit","date":"2026-05-30","duration":1,"day":"Sat","week":"2026-W22"}];
+window.chartSpec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","mark":{"type":"point","filled":true},"encoding":{"x":{"field":"week","type":"ordinal","title":"Week"},"y":{"field":"day","type":"ordinal","sort":["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],"title":"Day"},"size":{"field":"duration","type":"quantitative","title":"Minutes"}}};
