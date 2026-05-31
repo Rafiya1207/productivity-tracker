@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { saveProgress } = require("./progress");
+const { saveProgress } = require("../core/progress");
 
 const createCollection = () => {
   const inserted = [];

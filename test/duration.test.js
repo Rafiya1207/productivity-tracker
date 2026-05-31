@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { formatDuration } = require("./duration");
+const { formatDuration } = require("../core/duration");
 
 test("formatDuration returns 0m for zero minutes", () => {
   assert.equal(formatDuration(0), "0m");

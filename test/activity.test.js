@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { findActivity } = require("./activity");
+const { findActivity } = require("../core/activity");
 
 const createCollection = (record = null) => ({
   async findOne(query) {
